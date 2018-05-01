@@ -10,8 +10,8 @@ function getDataFromApi(artist, title, callback) {
   const query = {
   	queryArtist: `${artist}`,
   	queryTitle: `${title}`
-  }
-  $.getJSON(LYRICS_URL, artist, title); 
+  }; 
+  $.getJSON(LYRICS_URL, query, callback); 
 }
 
 function displaySearchData(data) {
@@ -30,7 +30,7 @@ function watchSubmit() {
   	queryTargetArtist.val(""); 
   	queryTargetTitle.val(""); 
   	getDataFromApi(queryArtist, queryTitle, displaySearchData); 
-  }); 
+  })
 }
 
 $(watchSubmit);
